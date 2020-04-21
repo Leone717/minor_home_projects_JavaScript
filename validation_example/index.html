@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Javascript form validation</title>
+</head>
+<body>
+<form action ="create.html" method="post" onsubmit="return validation();">
+<input type="text" name="name" id="name">
+<input type="email" name="email" id="email">
+<input type="password" name="password" id="password">
+<input type="submit" name="submit" value="Insert Now">	
+</form>
+<div id="eresult" style="color:red"></div>
+<script type="text/javascript">
+	function validation(){
+	var name = document.getElementById('name').value;
+	var email = document.getElementById('email').value;
+	var password = document.getElementById('password').value;
+	if(name=='' || password=='' || email=='')
+	{
+		document.getElementById("eresult").innerHTML = "All field Required";
+		return false;
+	}
+	else if(name.length<4){
+		document.getElementById("eresult").innerHTML = "Name Must Be Atleast 4 characters";
+		return false;
+	}
+	else if(password.length<4){
+		document.getElementById("eresult").innerHTML = "Password Must Be Atleast 4 characters";
+		return false;
+}
+else {
+	return true;
+}
+}
+</script>
+</body>
+</html> 
